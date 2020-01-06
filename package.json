@@ -22,7 +22,9 @@
     "postversion": "git push --follow-tags"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "semistandard": "^14.2.0"
+  },
   "engines": {
     "node": ">=13.2"
   },
