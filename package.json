@@ -1,18 +1,32 @@
 {
-  "name": "@typeiii/csv",
+  "name": "@vanillaes/markdown-es",
   "version": "0.0.0",
-  "description": "A modern, fast, RFC 4180 compliant parser for JS",
+  "description": "A modern, fast, markdown parser",
   "license": "MIT",
-  "contributors": [
-  	{
-    	"name": "Evan Plaice",
-    	"email": "evan.plaice@gmail.com",
-    	"url": "http://evanplaice.com"
-  	}
-  ],
-  "repository": "http://github.com/typeiii/csv/",
-  "main": "",
-  "scripts": {},
+  "author": "",
+  "repository": "http://github.com/vanillaes/markdown-es/",
+  "main": "index.js",
+  "type": "module",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "tape-es",
+    "test:watch": "tape-watch-es",
+    "lint": "semistandard",
+    "types": "npx tsc -p .config/jsconfig.json",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:typings",
+    "build:cjs": "npx rollup --config .config/cjs.config.js",
+    "build:esm": "npx rollup --config .config/esm.config.js ",
+    "build:typings": "npx tsc -p .config/tsconfig.json",
+    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
+    "preversion": "npm test && npm run lint && npm run types",
+    "postversion": "git push --follow-tags"
+  },
   "dependencies": {},
   "devDependencies": {},
+  "engines": {
+    "node": ">=13.2"
+  },
+  "semistandard": {
+    "parser": "babel-eslint"
+  }
 }
