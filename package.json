@@ -23,6 +23,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "semistandard": "^14.2.0"
   },
   "engines": {
