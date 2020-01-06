@@ -24,7 +24,8 @@
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "semistandard": "^14.2.0"
+    "semistandard": "^14.2.0",
+    "tape-es": "^1.1.6"
   },
   "engines": {
     "node": ">=13.2"
