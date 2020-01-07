@@ -1,0 +1,9 @@
+{
+  "input": [
+    "\tfoo\tbaz\t\tbim"
+  ],
+  "expect": [
+	"<pre><code>foo\tbaz\t\tbim",
+	"</code></pre>"
+  ]
+}
