@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A modern, fast, markdown parser",
   "license": "MIT",
-  "author": "",
+  "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
   "repository": "http://github.com/vanillaes/markdown-es/",
   "main": "index.js",
   "type": "module",
