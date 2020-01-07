@@ -19,7 +19,7 @@ export default function parse (markdown = '') {
   ctx.value = '';
   ctx.output = '';
 
-  const lexer = RegExp(/\t|\s|[^\t]+/y);
+  const lexer = RegExp(/\t|\s|\n|\r|[^\t\n\r]+/y);
   const output = () => { ctx.output += ctx.value; ctx.value = ''; };
   let tokens = [];
   let match = '';
@@ -30,7 +30,7 @@ export default function parse (markdown = '') {
 
     if (state === states.blankline) {
       switch (match) {
-        case '\t': // start of entry
+        case '\t':
           spaces += 4;
           continue;
         case ' ':
@@ -47,6 +47,11 @@ export default function parse (markdown = '') {
 
     if (state === states.code) {
       if (ctx.value === '') { ctx.value += tags.code.open; }
+      if (/\n|\r/.test(match)) {
+        ctx.value += '\n';
+        state = states.blankline;
+        continue;
+      }
       ctx.value += match;
       if (end) {
         ctx.value += '\n' + tags.code.close;
