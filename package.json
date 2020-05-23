@@ -2,6 +2,9 @@
   "name": "@vanillaes/markdown-es",
   "version": "0.0.0",
   "description": "A modern, fast, markdown parser",
+  "keywords": [
+    "wip"
+  ],
   "license": "MIT",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
   "repository": "http://github.com/vanillaes/markdown-es/",
@@ -25,10 +28,10 @@
   "devDependencies": {
     "babel-eslint": "^10.0.3",
     "semistandard": "^14.2.0",
-    "tape-es": "^1.2.3"
+    "tape-es": "^1.2.5"
   },
   "engines": {
-    "node": ">=13.2"
+    "node": "~14"
   },
   "semistandard": {
     "parser": "babel-eslint"
