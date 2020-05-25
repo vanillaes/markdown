@@ -33,6 +33,7 @@
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.0.3",
+    "rollup-plugin-terser": "^6.1.0",
     "semistandard": "^14.2.0",
     "tape-es": "^1.2.5"
   },
