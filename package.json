@@ -36,10 +36,10 @@
     "semistandard": "^14.2.0",
     "tape-es": "^1.2.5"
   },
-  "engines": {
-    "node": "~14"
-  },
   "semistandard": {
     "parser": "babel-eslint"
+  },
+  "engines": {
+    "node": "~14"
   }
 }
