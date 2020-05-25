@@ -10,6 +10,12 @@
   "repository": "http://github.com/vanillaes/markdown/",
   "main": "index.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
   "types": "index.d.ts",
   "scripts": {
     "test": "tape-es",
