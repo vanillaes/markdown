@@ -1,6 +1,6 @@
 /* eslint-disable no-template-curly-in-string */
 import test from 'tape';
-import markdown from '../index.js';
+import markdown from '@vanillaes/markdown';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const ex1 = require('./fixtures/1.json');
