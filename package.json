@@ -1,5 +1,5 @@
 {
-  "name": "@vanillaes/markdown-es",
+  "name": "@vanillaes/markdown",
   "version": "0.0.0",
   "description": "A modern, fast, markdown parser",
   "keywords": [
@@ -7,7 +7,7 @@
   ],
   "license": "MIT",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
-  "repository": "http://github.com/vanillaes/markdown-es/",
+  "repository": "http://github.com/vanillaes/markdown/",
   "main": "index.js",
   "type": "module",
   "types": "index.d.ts",
