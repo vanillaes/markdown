@@ -8,7 +8,6 @@
   "license": "MIT",
   "author": "Evan Plaice <evanplaice@gmail.com> (http://evanplaice.com/)",
   "repository": "http://github.com/vanillaes/markdown/",
-  "main": "index.js",
   "type": "module",
   "exports": {
     ".": {
