@@ -23,17 +23,16 @@
     "lint": "semistandard",
     "types": "tsc -p .config/jsconfig.json",
     "build": "npm run build:cjs && npm run build:min && npm run build:typings",
-    "build:cjs": "npx rollup --config .config/cjs.config.js",
-    "build:min": "npx rollup --config .config/min.config.js ",
+    "build:cjs": "esmtk commonjs index.js index.cjs",
+    "build:min": "esmtk minify index.js index.min.js",
     "build:typings": "tsc -p .config/tsconfig.json",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm test && npm run lint",
     "postversion": "git push --follow-tags"
   },
-  "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "rollup-plugin-terser": "^6.1.0",
+    "esmtk": "^0.5.3",
     "semistandard": "^14.2.0",
     "tape-es": "^1.2.5"
   },
