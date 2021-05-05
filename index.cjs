@@ -26,7 +26,7 @@ function parse(markdown = "") {
   const ctx = Object.create(null);
   ctx.value = "";
   ctx.output = "";
-  const lexer = RegExp(/\t|\s|\n|\r|[^\t\n\r]+/y);
+  const lexer = /\t|\s|\n|\r|[^\t\n\r]+/y;
   const output = () => {
     ctx.output += ctx.value;
     ctx.value = "";

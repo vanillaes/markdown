@@ -20,7 +20,7 @@
   "scripts": {
     "test": "tape-es",
     "test:watch": "tape-watch-es",
-    "lint": "semistandard",
+    "lint": "esmtk lint",
     "types": "tsc -p .config/jsconfig.json",
     "build": "npm run build:cjs && npm run build:min && npm run build:typings",
     "build:cjs": "esmtk commonjs index.js index.cjs",
@@ -31,13 +31,14 @@
     "postversion": "git push --follow-tags"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
     "esmtk": "^0.5.3",
     "semistandard": "^14.2.0",
     "tape-es": "^1.2.5"
   },
-  "semistandard": {
-    "parser": "babel-eslint"
+  "standard": {
+    "ignore": [
+      "index.cjs"
+    ]
   },
   "engines": {
     "node": ">=14"
