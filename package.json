@@ -21,11 +21,11 @@
     "test": "tape-es",
     "test:watch": "tape-watch-es",
     "lint": "semistandard",
-    "types": "npx tsc -p .config/jsconfig.json",
+    "types": "tsc -p .config/jsconfig.json",
     "build": "npm run build:cjs && npm run build:min && npm run build:typings",
     "build:cjs": "npx rollup --config .config/cjs.config.js",
     "build:min": "npx rollup --config .config/min.config.js ",
-    "build:typings": "npx tsc -p .config/tsconfig.json",
+    "build:typings": "tsc -p .config/tsconfig.json",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm test && npm run lint",
     "postversion": "git push --follow-tags"
