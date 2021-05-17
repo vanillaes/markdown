@@ -23,7 +23,7 @@
     "lint": "esmtk lint",
     "types": "tsc -p .config/jsconfig.json",
     "build": "npm run build:cjs && npm run build:min && npm run build:typings",
-    "build:cjs": "esmtk commonjs index.js index.cjs",
+    "build:cjs": "esmtk bundle index.js index.cjs",
     "build:min": "esmtk minify index.js index.min.js",
     "build:typings": "tsc -p .config/tsconfig.json",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
