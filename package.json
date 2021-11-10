@@ -21,11 +21,11 @@
     "test": "tape-es",
     "test:watch": "tape-watch-es",
     "lint": "esmtk lint",
-    "types": "tsc -p .config/jsconfig.json",
+    "types": "npx -p typescript tsc index.js  -t esnext --allowJS --checkJS --skipLibCheck --noEmit",
     "build": "npm run build:cjs && npm run build:min && npm run build:typings",
     "build:cjs": "esmtk bundle index.js index.cjs",
     "build:min": "esmtk minify index.js index.min.js",
-    "build:typings": "tsc -p .config/tsconfig.json",
+    "build:typings": "npx -p typescript tsc index.js  -t esnext --allowJS --checkJS --skipLibCheck --declaration --emitDeclarationOnly --noEmitOnError",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
     "preversion": "npm test && npm run lint",
     "postversion": "git push --follow-tags"
