@@ -12,7 +12,6 @@
   "exports": {
     ".": {
       "import": "./index.js",
-      "require": "./index.cjs",
       "browser": "./index.min.js"
     }
   },
@@ -22,8 +21,7 @@
     "test:watch": "tape-watch-es",
     "lint": "esmtk lint",
     "types": "npx -p typescript tsc index.js  -t esnext --allowJS --checkJS --skipLibCheck --noEmit",
-    "build": "npm run build:cjs && npm run build:min && npm run build:typings",
-    "build:cjs": "esmtk bundle index.js index.cjs",
+    "build": "npm run build:min && npm run build:typings",
     "build:min": "esmtk minify index.js index.min.js",
     "build:typings": "npx -p typescript tsc index.js  -t esnext --allowJS --checkJS --skipLibCheck --declaration --emitDeclarationOnly --noEmitOnError",
     "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
@@ -33,11 +31,6 @@
   "devDependencies": {
     "esmtk": "^0.5.13",
     "tape-es": "^1.2.16"
-  },
-  "standard": {
-    "ignore": [
-      "index.cjs"
-    ]
   },
   "engines": {
     "node": ">=14"
