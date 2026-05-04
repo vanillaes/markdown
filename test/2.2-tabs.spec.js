@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 import test from 'tape'
 import markdown from '@vanillaes/markdown'
 import { createRequire } from 'module'

@@ -1,6 +1,9 @@
+/**
+ * Parse markdown
+ * @param {string} markdown Markdown
+ * @returns {string} The parsed contents
+ */
 export default function parse (markdown = '') {
-  // TODO: Add input checking
-
   const states = {
     blankline: 1,
     code: 2
@@ -24,9 +27,12 @@ export default function parse (markdown = '') {
     ctx.output += ctx.value
     ctx.value = ''
   }
-  let tokens = []
+
+  /** @type {RegExpExecArray | null} */
+  let tokens
   let match = ''
   let end = false
+
   while ((tokens = lexer.exec(markdown)) !== null) {
     match = tokens[0]
     end = lexer.lastIndex === markdown.length

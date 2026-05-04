@@ -11,28 +11,23 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "browser": "./index.min.js"
+      "import": "./src/index.js",
+      "types": "./src/index.d.ts",
+      "browser": "./src/index.min.js"
     }
   },
-  "types": "index.d.ts",
   "scripts": {
-    "test": "tape-es",
-    "test:watch": "tape-watch-es",
-    "lint": "esmtk lint",
-    "types": "npx -p typescript tsc index.js  -t esnext --allowJS --checkJS --skipLibCheck --noEmit",
-    "build": "npm run build:min && npm run build:typings",
-    "build:min": "esmtk minify index.js index.min.js",
-    "build:typings": "npx -p typescript tsc index.js  -t esnext --allowJS --checkJS --skipLibCheck --declaration --emitDeclarationOnly --noEmitOnError",
-    "package": "npx rimraf package && npm pack | tail -n 1 | xargs tar -xf",
-    "preversion": "npm test && npm run lint",
+    "test": "es test",
+    "lint": "es lint",
+    "type": "es type",
+    "build": "es minify && es typings",
+    "clean": "es clean --minify --typings",
+    "preview": "es preview",
+    "preversion": "npm test && npm run lint && npm run type",
+    "version": "npm run clean && npm run build && git add --ignore-errors **/*.d.ts **/*.min.js",
     "postversion": "git push --follow-tags"
   },
-  "devDependencies": {
-    "esmtk": "^0.5.13",
-    "tape-es": "^1.2.16"
-  },
-  "engines": {
-    "node": ">=14"
+  "dependencies": {
+    "@vanillaes/esmtk": "^2.7.2"
   }
 }
